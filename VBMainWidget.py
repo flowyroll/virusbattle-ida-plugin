@@ -89,7 +89,7 @@ class VBMainWidget(QtGui.QWidget):
         
         self.ui.editAPIKey.textChanged.connect(self.editAPIKeyTextChanged)
         # self.ui.editMatchedLeftProcRVA.textChanged.connect(self.editMatchedLeftProcRVATextChanged)
-        self.ui.editMatchedRightProcRVA.textChanged.connect(self.editMatchedRightProcRVATextChanged)
+        # self.ui.editMatchedRightProcRVA.textChanged.connect(self.editMatchedRightProcRVATextChanged)
 
     def menuItemMatchedProcsTriggered(*args):        
         rvaStr = str(VBIDAHelper.currentFunctionRVA())
@@ -363,17 +363,17 @@ class VBMainWidget(QtGui.QWidget):
     #         self.ui.btnMatchedLeftProcMoreInfo.setEnabled(False)
     #         self.ui.btnDiffProcs.setEnabled(False)
 
-    def editMatchedRightProcRVATextChanged(self):
-        if self.ui.editMatchedRightProcRVA.text() != '':
-            if self.ui.editMatchedLeftProcRVA.text() != '':
-                self.ui.btnDiffProcs.setEnabled(True)
-            else:
-                self.ui.btnDiffProcs.setEnabled(False)
+    # def editMatchedRightProcRVATextChanged(self):
+    #     if self.ui.editMatchedRightProcRVA.text() != '':
+    #         if self.ui.editMatchedLeftProcRVA.text() != '':
+    #             self.ui.btnDiffProcs.setEnabled(True)
+    #         else:
+    #             self.ui.btnDiffProcs.setEnabled(False)
 
-            self.ui.btnMatchedRightProcMoreInfo.setEnabled(True)
-        else:
-            self.ui.btnMatchedRightProcMoreInfo.setEnabled(False)
-            self.ui.btnDiffProcs.setEnabled(False)
+    #         self.ui.btnMatchedRightProcMoreInfo.setEnabled(True)
+    #     else:
+    #         self.ui.btnMatchedRightProcMoreInfo.setEnabled(False)
+    #         self.ui.btnDiffProcs.setEnabled(False)
 
     def listMatchedProcsItemChanged(self, item):
         if item is not None:
