@@ -57,7 +57,6 @@ class VBMainWidget(QtGui.QWidget):
 
     def initSignals(self):
         self.ui.btnRegister.clicked.connect(self.buttonClicked)
-        self.ui.btnLoadProfile.clicked.connect(self.buttonClicked)
         self.ui.btnRemoveProfile.clicked.connect(self.buttonClicked)
         self.ui.btnSaveProfile.clicked.connect(self.buttonClicked)
         self.ui.btnReloadBinaries.clicked.connect(self.buttonClicked)
@@ -76,6 +75,9 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.btnMatchedRightProcMoreInfo.clicked.connect(self.buttonClicked)
         self.ui.btnShowChild.clicked.connect(self.buttonClicked)
 
+        self.ui.btnShowAPIKey.pressed.connect(self.showAPIKey)
+        self.ui.btnShowAPIKey.released.connect(self.hideAPIKey)
+
 
         self.ui.listProfiles.currentItemChanged.connect(self.listProfileItemChanged)
         self.ui.listBins.currentItemChanged.connect(self.listBinsItemChanged)
@@ -90,6 +92,14 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.editAPIKey.textChanged.connect(self.editAPIKeyTextChanged)
         # self.ui.editMatchedLeftProcRVA.textChanged.connect(self.editMatchedLeftProcRVATextChanged)
         # self.ui.editMatchedRightProcRVA.textChanged.connect(self.editMatchedRightProcRVATextChanged)
+
+    def showAPIKey(self):
+        self.ui.editAPIKey.setEchoMode(QtGui.QLineEdit.Normal)
+        self.ui.btnShowAPIKey.setText('Hide')
+
+    def hideAPIKey(self):
+        self.ui.editAPIKey.setEchoMode(QtGui.QLineEdit.PasswordEchoOnEdit)
+        self.ui.btnShowAPIKey.setText('Show')
 
     def menuItemMatchedProcsTriggered(*args):        
         rvaStr = str(VBIDAHelper.currentFunctionRVA())
@@ -121,7 +131,7 @@ class VBMainWidget(QtGui.QWidget):
             self.ui.listProfiles.addItem(profile.config['Name'])
 
     def editAPIKeyTextChanged(self):
-        self.APIKey = self.ui.editAPIKey.toPlainText().strip()
+        self.APIKey = self.ui.editAPIKey.text().strip()
 
     def registerFinished(self, result):
         self.notifyStatus(result)
@@ -195,7 +205,6 @@ class VBMainWidget(QtGui.QWidget):
         result = profile.remove()
         self.loadListProfiles()
         if result['statuscode'] == 0:
-            self.ui.btnLoadProfile.setEnabled(False)
             self.ui.btnRemoveProfile.setEnabled(False)
         self.notifyStatus(result)
 
@@ -207,7 +216,7 @@ class VBMainWidget(QtGui.QWidget):
         self.juiciesCache.clean()
         self.juiceIndividualCache.clean()
 
-    def loadProfileButtonClicked(self):
+    def loadProfile(self):
         if self.ui.listProfiles.currentItem() is None:
             self.notifyStatus({
                 'statuscode': 1,
@@ -247,8 +256,6 @@ class VBMainWidget(QtGui.QWidget):
             self.saveProfileButtonClicked()
         elif btnName == 'RemoveProfile':
             self.removeProfileButtonClicked()
-        elif btnName == 'LoadProfile':
-            self.loadProfileButtonClicked()
         elif btnName == 'ReloadBinaries':
             self.queryAll()
         elif btnName == 'RefreshBinary':
@@ -315,9 +322,8 @@ class VBMainWidget(QtGui.QWidget):
             c.Show()
 
     def listProfileItemChanged(self, item):
-        self.ui.btnLoadProfile.setEnabled(True)
         self.ui.btnRemoveProfile.setEnabled(True)
-        self.loadProfileButtonClicked()
+        self.loadProfile()
 
     def listProcsWithSimItemChanged(self, item):
         if item is not None:

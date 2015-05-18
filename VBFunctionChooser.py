@@ -26,6 +26,9 @@ class VBFunctionChooser(Choose2):
         self.procId = procId
         self.matchedProcsCache = matchedProcsCache
         self.populateItems()        
+        self.addCommand()
+        global plg
+        print plg
 
     def populateItems(self):
         self.items = []        
@@ -43,7 +46,29 @@ class VBFunctionChooser(Choose2):
             for proc in procsWithSim:                
                 ea = VBIDAHelper.addressFromRVA(int(proc.split('/')[1], 16))
                 self.items.append([hex(ea), GetFunctionName(ea)])
-        
+    
+    def addCommand(self):
+        t = self.Show()
+        if t < 0:
+            return False
+
+        self.cmdMatches = None
+        self.cmdDissInfo = self.AddCommand("Disassembly Info...")
+        if not self.isMatchedProcs:
+            self.cmdMatches = self.AddCommand("Matches...")        
+        return True    
+
+    def OnCommand(self, n, cmd):
+
+        if n >= 0:
+            if cmd == self.cmdMatches:
+                print "Matches @", n
+            elif cmd == self.cmdDissInfo:
+                print "Diass @", n
+            else:
+                print "Unknown command:", cmd_id, "@", n
+        return 1
+
     def OnClose(self):
         pass
 
