@@ -19,6 +19,7 @@ class VBFunctionChooser(Choose2):
                     ['Name', 30 | Choose2.CHCOL_PLAIN],                    
                 ], Choose2.CH_MULTI)
 
+        self.openedFileHash =  VBIDAHelper.getFilePath()
         self.n = 0
         self.icon = 41
         self.deflt = deflt
@@ -27,9 +28,7 @@ class VBFunctionChooser(Choose2):
         self.matchedProcsCache = matchedProcsCache
         self.populateItems()        
         self.addCommand()
-        global plg
-        print plg
-
+        
     def populateItems(self):
         self.items = []        
         if self.isMatchedProcs:
@@ -59,10 +58,18 @@ class VBFunctionChooser(Choose2):
         return True    
 
     def OnCommand(self, n, cmd):
-
         if n >= 0:
             if cmd == self.cmdMatches:
-                print "Matches @", n
+                rva = VBIDAHelper.RVAFromAddress(int(self.items[n][0], 16))
+                rvaStr = str(hex(rva))
+                c = VBFunctionChooser(
+                        'Address %s matched procedures' % self.items[n][0], 
+                        True,
+                        self.matchedProcsCache,
+                        VBIDAHelper.SHA1File(self.openedFileHash) + '/' + rvaStr,
+                        rva
+                    )
+                c.Show()                                
             elif cmd == self.cmdDissInfo:
                 print "Diass @", n
             else:

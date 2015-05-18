@@ -33,6 +33,9 @@ def SHA1File(path):
 def addressFromRVA(rva):
     return get_imagebase() + rva
 
+def RVAFromAddress(address):
+    return abs(address - get_imagebase())
+
 def rgbTohex(rgb):
     return '0x%02x%02x%02x' % rgb
 
