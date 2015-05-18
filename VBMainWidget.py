@@ -12,6 +12,7 @@ import os
 from ctypes import *
 
 class VBMainWidget(QtGui.QWidget):
+
     def __init__(self, parent=None):
         super(VBMainWidget, self).__init__(parent)
         self.ui = Ui_frmVirusBattle()
@@ -25,6 +26,7 @@ class VBMainWidget(QtGui.QWidget):
             self.menuItemMatchedProcsTriggered, self.matchedProcsCache)
         
         self.currentDir = os.path.dirname(os.path.realpath(__file__))
+        self.downloadFolder = self.currentDir + os.sep + 'download'
         self.openedFilePath = VBIDAHelper.getFilePath()
         self.openedFileHash = ''
         try:
@@ -306,20 +308,45 @@ class VBMainWidget(QtGui.QWidget):
         elif btnName == 'MatchedLeftProcMoreInfo' or btnName == 'MatchedRightProcMoreInfo':
             print 'NOT IMPLEMENTED: IT WILL SHOW JUICE INFO IN A NEW IDA VIEW, GRAPHS, ...'
         elif btnName == 'ShowChild':
-            print 'NOT IMPLEMENTED: IT WILL SHOW Strings, dots, json related to the child...'
+            childHash = self.ui.editChildHash.text()
+            childSName = self.ui.editChildServiceName.text()
+            self.showChildView(childHash, childSName)            
         else:
             self.status('idle', 'black')
 
+    def readDownloadedFile(self, file):
+        try:
+            path = self.downloadFolder+os.sep+file
+            f = open(path, 'r')
+            return f.read()
+        except:
+            return None
+
+    def showString(self, hash, data):
+        print hash, data
+
+    def showChildView(self, childHash, serviceName):
+        buff = self.readDownloadedFile(childHash+'.'+self.getExtension(serviceName))
+        if buff is None:
+            self.notifyStatus({
+                'statuscode': 1,
+                'message': 'Related file does not exist or you have not downloaded the file'
+            })
+            return
+        else:
+            if serviceName == 'srlStatic, srlStrings':
+                self.showStrings(childHash, buff)
+
     def openMatchedProcsChooser(self, rvaStr):
-            rva = int(rvaStr, 16)
-            c = VBFunctionChooser(
-                    'Address %s matched procedures' % hex(VBIDAHelper.addressFromRVA(rva)), 
-                    True,
-                    self.matchedProcsCache,
-                    self.openedFileHash + '/' + rvaStr,
-                    rva
-                )
-            c.Show()
+        rva = int(rvaStr, 16)
+        c = VBFunctionChooser(
+                'Address %s matched procedures' % hex(VBIDAHelper.addressFromRVA(rva)), 
+                True,
+                self.matchedProcsCache,
+                self.openedFileHash + '/' + rvaStr,
+                rva
+            )
+        c.Show()
 
     def listProfileItemChanged(self, item):
         self.ui.btnRemoveProfile.setEnabled(True)
@@ -816,7 +843,7 @@ class VBMainWidget(QtGui.QWidget):
         })
         self.waitCursor(False)
 
-    def download(self, hash, isChild):
+    def getExtension(self, serviceType):
         typeExtension = {
             'archive.zip': 'zip',            
             'binary.pe32': 'exe',
@@ -826,21 +853,24 @@ class VBMainWidget(QtGui.QWidget):
             'srlStatic, srlStrings': 'strings.json',
             'srlStatic, srlCallgraph': 'callgraph.dot',
         }
-        if self.checkAPIKey():
-            downloadFolder = self.currentDir + os.sep + 'download'
-            if not os.path.isdir(downloadFolder):
-                os.mkdir(downloadFolder)
+
+        try:
+            return typeExtension[serviceType]
+        except:
+            return 'bin'
+
+    def download(self, hash, isChild):
+        if self.checkAPIKey():            
+            if not os.path.isdir(self.downloadFolder):
+                os.mkdir(self.downloadFolder)
 
             if isChild:
                 fileType = self.ui.editChildServiceName.text()                 
             else:
                 fileType = self.ui.editClassObject.toPlainText()
 
-            try:
-                extension = typeExtension[fileType]
-            except:
-                extension = 'bin'
-
+            extension = self.getExtension(fileType)
+        
             cmd = VBAsyncCommand('download', self.APIKey, hash, '%s%sdownload%s%s.%s' %
                 (self.currentDir, os.sep, os.sep, hash, extension))
             cmd.finishedProcessing.connect(self.downloadFinished)
