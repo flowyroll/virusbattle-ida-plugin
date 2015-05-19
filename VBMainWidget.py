@@ -322,7 +322,7 @@ class VBMainWidget(QtGui.QWidget):
         except:
             return None
 
-    def showString(self, hash, data):
+    def showStrings(self, hash, data):
         print hash, data
 
     def showChildView(self, childHash, serviceName):
@@ -435,6 +435,7 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.listBins.clear()
         for bin in binaries:
             self.ui.listBins.addItem(bin['_id'])
+        self.ui.lcdUploadedBins.display(len(binaries))
 
     def checkOpenedFile(self, binaries):
         for bin in binaries:
