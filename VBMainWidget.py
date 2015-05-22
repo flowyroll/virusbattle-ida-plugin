@@ -7,8 +7,10 @@ from VBProfile import VBProfile
 from VBAsyncCommand import VBAsyncCommand
 from VBCache import VBCache
 from VBFunctionChooser import VBFunctionChooser
+from VBStringChooser import VBStringChooser
 import VBIDAHelper
 import os
+import json
 from ctypes import *
 
 class VBMainWidget(QtGui.QWidget):
@@ -318,12 +320,11 @@ class VBMainWidget(QtGui.QWidget):
         try:
             path = self.downloadFolder+os.sep+file
             f = open(path, 'r')
-            return f.read()
+            b = f.read()
+            f.close()
+            return b
         except:
             return None
-
-    def showStrings(self, hash, data):
-        print hash, data
 
     def showChildView(self, childHash, serviceName):
         buff = self.readDownloadedFile(childHash+'.'+self.getExtension(serviceName))
@@ -331,11 +332,15 @@ class VBMainWidget(QtGui.QWidget):
             self.notifyStatus({
                 'statuscode': 1,
                 'message': 'Related file does not exist or you have not downloaded the file'
-            })
-            return
+            })            
         else:
             if serviceName == 'srlStatic, srlStrings':
-                self.showStrings(childHash, buff)
+                jsStrings = json.loads(buff)
+                if 'strings' in jsStrings:
+                    c = VBStringChooser(
+                            childHash, jsStrings['strings']
+                        )
+                    c.Show()
 
     def openMatchedProcsChooser(self, rvaStr):
         rva = int(rvaStr, 16)

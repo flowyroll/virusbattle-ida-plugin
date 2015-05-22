@@ -13,6 +13,12 @@
     <height>479</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Virus Battle</string>
   </property>
@@ -520,11 +526,6 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </widget>
-    <zorder>groupBox</zorder>
-    <zorder>groupBox_3</zorder>
-    <zorder>groupBox_8</zorder>
-    <zorder>groupBox_7</zorder>
-    <zorder>btnRemoveProfile</zorder>
    </widget>
    <widget class="QWidget" name="page">
     <property name="geometry">

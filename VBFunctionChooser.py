@@ -6,7 +6,7 @@ import VBIDAHelper
 class VBFunctionChooser(Choose2):
     def __init__(self, title, isMatchedProcs, matchedProcsCache, procId=None, deflt=1):
         if isMatchedProcs:
-            Choose2.__init__(self, title, 
+            Choose2.__init__(self, title,
                 [ 
                     ['RVA', 10 | Choose2.CHCOL_HEX], 
                     ['Name', 30 | Choose2.CHCOL_PLAIN],
@@ -15,18 +15,18 @@ class VBFunctionChooser(Choose2):
         else:
             Choose2.__init__(self, title, 
                 [ 
-                    ['Address', 10 | Choose2.CHCOL_HEX], 
-                    ['Name', 30 | Choose2.CHCOL_PLAIN],                    
+                    ['Address', 10 | Choose2.CHCOL_HEX],
+                    ['Name', 30 | Choose2.CHCOL_PLAIN],                   
                 ], Choose2.CH_MULTI)
 
-        self.openedFileHash =  VBIDAHelper.getFilePath()
+        self.openedFileHash = VBIDAHelper.SHA1File(VBIDAHelper.getFilePath())
         self.n = 0
         self.icon = 41
         self.deflt = deflt
         self.isMatchedProcs = isMatchedProcs
         self.procId = procId
         self.matchedProcsCache = matchedProcsCache
-        self.populateItems()        
+        self.populateItems()
         self.addCommand()
         
     def populateItems(self):
@@ -45,7 +45,8 @@ class VBFunctionChooser(Choose2):
             for proc in procsWithSim:                
                 ea = VBIDAHelper.addressFromRVA(int(proc.split('/')[1], 16))
                 self.items.append([hex(ea), GetFunctionName(ea)])
-    
+        print self.items
+
     def addCommand(self):
         t = self.Show()
         if t < 0:
@@ -66,7 +67,7 @@ class VBFunctionChooser(Choose2):
                         'Address %s matched procedures' % self.items[n][0], 
                         True,
                         self.matchedProcsCache,
-                        VBIDAHelper.SHA1File(self.openedFileHash) + '/' + rvaStr,
+                        self.openedFileHash + '/' + rvaStr,
                         rva
                     )
                 c.Show()                                

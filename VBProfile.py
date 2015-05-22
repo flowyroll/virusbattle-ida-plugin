@@ -18,7 +18,10 @@ class VBProfile(object):
             TYPE: Description
         """
         self.setConfig(name, key, hCaption, hColor, threshold, upperHalf, noLibProc)
-        self.configPath = os.environ['USERPROFILE'] + '/.VirusBattle'
+        try:
+            self.configPath = os.environ['USERPROFILE'] + os.sep + '.VirusBattle'
+        except:
+            self.configPath = os.environ['$HOME'] + os.sep + '.VirusBattle'
 
     def setConfig(self, name, key, hCaption, hColor, threshold, upperHalf, noLibProc):
         """Set configuration parameters
