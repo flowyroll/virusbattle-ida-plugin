@@ -27,7 +27,10 @@ class VBMainWidget(QtGui.QWidget):
         VBIDAHelper.addMenuItem('View/', '[VB] Matched Procs', 'Alt-Shift-V', 
             self.menuItemMatchedProcsTriggered, self.matchedProcsCache)
         
-        self.currentDir = os.path.dirname(os.path.realpath(__file__))
+        self.currentDir = os.path.abspath(
+            os.path.join(os.path.realpath(__file__), os.pardir, os.pardir)
+        )
+        
         self.downloadFolder = self.currentDir + os.sep + 'download'
         self.openedFilePath = VBIDAHelper.getFilePath()
         self.openedFileHash = ''

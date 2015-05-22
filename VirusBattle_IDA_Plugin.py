@@ -6,8 +6,9 @@ Returns:
 """
 from idaapi import PluginForm
 from PySide import QtCore, QtGui
-from VBMainWidget import VBMainWidget
-import VBIDAHelper
+from virusbattle.VBMainWidget import VBMainWidget
+import virusbattle.VBIDAHelper
+
 class VBPluginForm(PluginForm):
     """IDA Plugin Form 
         
