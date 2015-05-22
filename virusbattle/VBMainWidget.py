@@ -8,6 +8,9 @@ from VBAsyncCommand import VBAsyncCommand
 from VBCache import VBCache
 from VBFunctionChooser import VBFunctionChooser
 from VBStringChooser import VBStringChooser
+from VBDotViewer import VBDotViewer
+import pydot
+import dot_parser
 import VBIDAHelper
 import os
 import json
@@ -344,6 +347,8 @@ class VBMainWidget(QtGui.QWidget):
                             childHash, jsStrings['strings']
                         )
                     c.Show()
+            if serviceName == 'srlStatic, srlCallgraph':
+                print graph_from_dot_data(buff)
 
     def openMatchedProcsChooser(self, rvaStr):
         rva = int(rvaStr, 16)
