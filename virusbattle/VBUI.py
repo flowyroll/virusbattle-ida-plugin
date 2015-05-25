@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Tue May 26 01:02:36 2015
+# Created: Tue May 26 01:16:31 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -345,11 +345,11 @@ class Ui_frmVirusBattle(object):
         self.label_23.setGeometry(QtCore.QRect(10, 10, 131, 16))
         self.label_23.setObjectName("label_23")
         self.listMatchedBins = QtGui.QListWidget(self.tab)
-        self.listMatchedBins.setGeometry(QtCore.QRect(10, 30, 131, 51))
+        self.listMatchedBins.setGeometry(QtCore.QRect(10, 30, 131, 71))
         self.listMatchedBins.setObjectName("listMatchedBins")
         self.groupBinary_2 = QtGui.QGroupBox(self.tab)
         self.groupBinary_2.setEnabled(True)
-        self.groupBinary_2.setGeometry(QtCore.QRect(10, 120, 131, 131))
+        self.groupBinary_2.setGeometry(QtCore.QRect(10, 140, 131, 131))
         self.groupBinary_2.setObjectName("groupBinary_2")
         self.label_26 = QtGui.QLabel(self.groupBinary_2)
         self.label_26.setGeometry(QtCore.QRect(10, 20, 46, 13))
@@ -464,7 +464,7 @@ class Ui_frmVirusBattle(object):
         self.btnMatchedLeftProcMoreInfo.setObjectName("btnMatchedLeftProcMoreInfo")
         self.btnReloadSimilarBins = QtGui.QPushButton(self.tab)
         self.btnReloadSimilarBins.setEnabled(True)
-        self.btnReloadSimilarBins.setGeometry(QtCore.QRect(80, 90, 61, 23))
+        self.btnReloadSimilarBins.setGeometry(QtCore.QRect(90, 110, 51, 23))
         self.btnReloadSimilarBins.setObjectName("btnReloadSimilarBins")
         self.groupBox_5 = QtGui.QGroupBox(self.tab)
         self.groupBox_5.setGeometry(QtCore.QRect(510, 10, 201, 261))
@@ -597,6 +597,24 @@ class Ui_frmVirusBattle(object):
         self.btnShowMatchedProcs.setText("")
         self.btnShowMatchedProcs.setFlat(False)
         self.btnShowMatchedProcs.setObjectName("btnShowMatchedProcs")
+        self.label_45 = QtGui.QLabel(self.tab)
+        self.label_45.setGeometry(QtCore.QRect(10, 115, 46, 13))
+        self.label_45.setObjectName("label_45")
+        self.lcdMatchedBins = QtGui.QLCDNumber(self.tab)
+        self.lcdMatchedBins.setGeometry(QtCore.QRect(30, 110, 64, 23))
+        font = QtGui.QFont()
+        font.setWeight(50)
+        font.setItalic(False)
+        font.setBold(False)
+        self.lcdMatchedBins.setFont(font)
+        self.lcdMatchedBins.setFrameShape(QtGui.QFrame.NoFrame)
+        self.lcdMatchedBins.setFrameShadow(QtGui.QFrame.Plain)
+        self.lcdMatchedBins.setLineWidth(1)
+        self.lcdMatchedBins.setSmallDecimalPoint(True)
+        self.lcdMatchedBins.setDigitCount(6)
+        self.lcdMatchedBins.setSegmentStyle(QtGui.QLCDNumber.Flat)
+        self.lcdMatchedBins.setProperty("value", 0.0)
+        self.lcdMatchedBins.setObjectName("lcdMatchedBins")
         self.tabWidgetVB.addTab(self.tab, "")
         self.toolBox.addItem(self.page, "")
         self.page_2 = QtGui.QWidget()
@@ -764,6 +782,7 @@ class Ui_frmVirusBattle(object):
         self.btnHighlightAllProcs.setText(QtGui.QApplication.translate("frmVirusBattle", "Highlight All", None, QtGui.QApplication.UnicodeUTF8))
         self.label_24.setText(QtGui.QApplication.translate("frmVirusBattle", "Matched procs:", None, QtGui.QApplication.UnicodeUTF8))
         self.listMatchedProcs.setToolTip(QtGui.QApplication.translate("frmVirusBattle", "List of binaries matched to the current binary", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_45.setText(QtGui.QApplication.translate("frmVirusBattle", "Count:", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidgetVB.setTabText(self.tabWidgetVB.indexOf(self.tab), QtGui.QApplication.translate("frmVirusBattle", "Matches", None, QtGui.QApplication.UnicodeUTF8))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), QtGui.QApplication.translate("frmVirusBattle", "VB", None, QtGui.QApplication.UnicodeUTF8))
         self.textBrowserAVScan.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

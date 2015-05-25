@@ -531,6 +531,7 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.listMatchedBins.clear()
         for match in matches:
             self.ui.listMatchedBins.addItem(match['_id'])
+        self.ui.lcdMatchedBins.display(len(matches))
         juice = self.juiciesCache.read(self.openedFileHash)
         if juice is None:            
             self.showBinary(self.openedFileHash)

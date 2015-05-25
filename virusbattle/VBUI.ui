@@ -1265,7 +1265,7 @@ p, li { white-space: pre-wrap; }
          <x>10</x>
          <y>30</y>
          <width>131</width>
-         <height>51</height>
+         <height>71</height>
         </rect>
        </property>
        <property name="toolTip">
@@ -1279,7 +1279,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>120</y>
+         <y>140</y>
          <width>131</width>
          <height>131</height>
         </rect>
@@ -1668,9 +1668,9 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>90</y>
-         <width>61</width>
+         <x>90</x>
+         <y>110</y>
+         <width>51</width>
          <height>23</height>
         </rect>
        </property>
@@ -2124,6 +2124,57 @@ p, li { white-space: pre-wrap; }
          <bool>false</bool>
         </property>
        </widget>
+      </widget>
+      <widget class="QLabel" name="label_45">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>115</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Count:</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdMatchedBins">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>110</y>
+         <width>64</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>true</bool>
+       </property>
+       <property name="digitCount">
+        <number>6</number>
+       </property>
+       <property name="segmentStyle">
+        <enum>QLCDNumber::Flat</enum>
+       </property>
+       <property name="value" stdset="0">
+        <double>0.000000000000000</double>
+       </property>
       </widget>
      </widget>
     </widget>
