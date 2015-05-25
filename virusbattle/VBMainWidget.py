@@ -10,12 +10,11 @@ from VBFunctionChooser import VBFunctionChooser
 from VBStringChooser import VBStringChooser
 from VBDisassemblyViewer import VBDisassemblyViewer
 from pydot.pydot import graph_from_dot_data
-from string import Template
-import VBIDAHelper
+from VBAPI import VBAPI
 from template.VBTemplateHelper import VBTemplateHelper
 import os
 import json
-from VBAPI import VBAPI
+import VBIDAHelper
 
 class VBMainWidget(QtGui.QWidget):
 
