@@ -354,10 +354,11 @@ class VBMainWidget(QtGui.QWidget):
             if serviceName == 'srlStatic, srlStrings':
                 jsStrings = json.loads(buff)
                 if 'strings' in jsStrings:
-                    c = VBStringChooser(
-                            childHash, jsStrings['strings']
+                    c = VBStringChooser(                             
+                            childHash, 
+                            jsStrings['strings']
                         )
-                    c.Show()
+                    c.Show()  
             if serviceName == 'srlStatic, srlCallgraph':
                 pass
 

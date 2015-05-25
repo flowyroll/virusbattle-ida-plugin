@@ -3,12 +3,12 @@ from idautils import *
 from idc import *
 
 class VBStringChooser(Choose2):
-    def __init__(self, binHash, strings, deflt=1):
-        
-        Choose2.__init__(self, "Strings for binary " + binHash,
+    def __init__(self, binHash, strings, deflt=1):        
+        title = 'Strings for binary ' + binHash
+        Choose2.__init__(self, title.encode('ascii'),
             [ 
                 ['RVA', 10 | Choose2.CHCOL_HEX], 
-                ['String', 30 | Choose2.CHCOL_PLAIN],
+                ['String', 40 | Choose2.CHCOL_PLAIN],
                 ['Binary hash', 30 | Choose2.CHCOL_PLAIN]
             ], Choose2.CH_MULTI )
    
@@ -16,18 +16,22 @@ class VBStringChooser(Choose2):
         self.icon = 41
         self.deflt = deflt
         self.strings = strings
-        self.hash = binHash
-        self.populateItems()
-        self.Show()
+        self.binHash = binHash
+        self.populateItems()   
 
     def populateItems(self):
         self.items = []
         for x in self.strings:
-            str = x[0]
+            s = x[0]
             offsets = x[1]
             for offset in offsets:
-                self.items.append([offset, str, self.hash])
-        print self.items
+                self.items.append(
+                    [
+                        offset,#.encode('ascii','replace'),
+                        s,#.encode('ascii','replace'),
+                        self.binHash#.encode('ascii','replace')
+                    ]
+                )
            
     def OnClose(self):
         pass
@@ -44,3 +48,4 @@ class VBStringChooser(Choose2):
     def OnRefresh(self, n):
         self.populateItems()
         return n
+        

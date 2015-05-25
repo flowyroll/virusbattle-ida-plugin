@@ -45,7 +45,6 @@ class VBFunctionChooser(Choose2):
             for proc in procsWithSim:                
                 ea = VBIDAHelper.addressFromRVA(int(proc.split('/')[1], 16))
                 self.items.append([hex(ea), GetFunctionName(ea)])
-        print self.items
 
     def addCommand(self):
         t = self.Show()
@@ -53,9 +52,9 @@ class VBFunctionChooser(Choose2):
             return False
 
         self.cmdMatches = None
-        self.cmdDissInfo = self.AddCommand('Disassembly Info...', 'Alt+D')
+        self.cmdDissInfo = self.AddCommand('Disassembly Info...')
         if not self.isMatchedProcs:
-            self.cmdMatches = self.AddCommand('Matches...', 'Alt+M')        
+            self.cmdMatches = self.AddCommand('Matches...')        
         return True    
 
     def OnCommand(self, n, cmd):
