@@ -53,9 +53,9 @@ class VBFunctionChooser(Choose2):
             return False
 
         self.cmdMatches = None
-        self.cmdDissInfo = self.AddCommand("Disassembly Info...")
+        self.cmdDissInfo = self.AddCommand('Disassembly Info...', 'Alt+D')
         if not self.isMatchedProcs:
-            self.cmdMatches = self.AddCommand("Matches...")        
+            self.cmdMatches = self.AddCommand('Matches...', 'Alt+M')        
         return True    
 
     def OnCommand(self, n, cmd):

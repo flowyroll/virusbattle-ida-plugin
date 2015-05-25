@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Mon May 18 15:03:17 2015
+# Created: Mon May 25 00:16:58 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,7 +13,12 @@ class Ui_frmVirusBattle(object):
     def setupUi(self, frmVirusBattle):
         frmVirusBattle.setObjectName("frmVirusBattle")
         frmVirusBattle.setWindowModality(QtCore.Qt.ApplicationModal)
-        frmVirusBattle.resize(752, 479)
+        frmVirusBattle.resize(752, 459)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(frmVirusBattle.sizePolicy().hasHeightForWidth())
+        frmVirusBattle.setSizePolicy(sizePolicy)
         self.toolBox = QtGui.QToolBox(frmVirusBattle)
         self.toolBox.setGeometry(QtCore.QRect(10, 10, 731, 391))
         self.toolBox.setFrameShadow(QtGui.QFrame.Raised)
@@ -137,6 +142,13 @@ class Ui_frmVirusBattle(object):
         self.btnShowAPIKey.setDefault(False)
         self.btnShowAPIKey.setFlat(False)
         self.btnShowAPIKey.setObjectName("btnShowAPIKey")
+        self.browserAboutUs = QtGui.QTextBrowser(self.pageConfiguration)
+        self.browserAboutUs.setGeometry(QtCore.QRect(0, 130, 201, 151))
+        self.browserAboutUs.setOpenExternalLinks(True)
+        self.browserAboutUs.setObjectName("browserAboutUs")
+        self.label_41 = QtGui.QLabel(self.pageConfiguration)
+        self.label_41.setGeometry(QtCore.QRect(0, 110, 51, 20))
+        self.label_41.setObjectName("label_41")
         self.toolBox.addItem(self.pageConfiguration, "")
         self.page = QtGui.QWidget()
         self.page.setGeometry(QtCore.QRect(0, 0, 731, 310))
@@ -581,23 +593,21 @@ class Ui_frmVirusBattle(object):
         self.btnShowMatchedProcs.setObjectName("btnShowMatchedProcs")
         self.tabWidgetVB.addTab(self.tab, "")
         self.toolBox.addItem(self.page, "")
-        self.pageAbout = QtGui.QWidget()
-        self.pageAbout.setGeometry(QtCore.QRect(0, 0, 731, 310))
-        self.pageAbout.setObjectName("pageAbout")
-        self.browserAboutUs = QtGui.QTextBrowser(self.pageAbout)
-        self.browserAboutUs.setGeometry(QtCore.QRect(0, 0, 201, 301))
-        self.browserAboutUs.setOpenExternalLinks(True)
-        self.browserAboutUs.setObjectName("browserAboutUs")
-        self.label_4 = QtGui.QLabel(self.pageAbout)
-        self.label_4.setGeometry(QtCore.QRect(210, 0, 521, 301))
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(48)
-        self.label_4.setFont(font)
-        self.label_4.setTextFormat(QtCore.Qt.LogText)
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.toolBox.addItem(self.pageAbout, "")
+        self.page_2 = QtGui.QWidget()
+        self.page_2.setObjectName("page_2")
+        self.tabWidget = QtGui.QTabWidget(self.page_2)
+        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 731, 301))
+        self.tabWidget.setObjectName("tabWidget")
+        self.tab_3 = QtGui.QWidget()
+        self.tab_3.setObjectName("tab_3")
+        self.tabWidget.addTab(self.tab_3, "")
+        self.tab_4 = QtGui.QWidget()
+        self.tab_4.setObjectName("tab_4")
+        self.tabWidget.addTab(self.tab_4, "")
+        self.tab_5 = QtGui.QWidget()
+        self.tab_5.setObjectName("tab_5")
+        self.tabWidget.addTab(self.tab_5, "")
+        self.toolBox.addItem(self.page_2, "")
         self.line = QtGui.QFrame(frmVirusBattle)
         self.line.setGeometry(QtCore.QRect(10, 400, 731, 20))
         self.line.setFrameShape(QtGui.QFrame.HLine)
@@ -613,6 +623,7 @@ class Ui_frmVirusBattle(object):
         self.toolBox.setCurrentIndex(0)
         self.toolBox.layout().setSpacing(6)
         self.tabWidgetVB.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(frmVirusBattle)
 
     def retranslateUi(self, frmVirusBattle):
@@ -652,6 +663,12 @@ class Ui_frmVirusBattle(object):
         self.editAPIKey.setToolTip(QtGui.QApplication.translate("frmVirusBattle", "<html><head/><body><p>Email Address</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.editAPIKey.setWhatsThis(QtGui.QApplication.translate("frmVirusBattle", "<html><head/><body><p><br/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.btnShowAPIKey.setText(QtGui.QApplication.translate("frmVirusBattle", "Show", None, QtGui.QApplication.UnicodeUTF8))
+        self.browserAboutUs.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Virusbattle is a web service that analyses malware and other binaries with a variety of advanced static and dynamic analyses. For more information check out the </span><a href=\"http://ulsrl.org/project/VirusBattle/\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">Lab Website</span></a><span style=\" font-size:8pt;\">.The Plugin is an integration of Virusbattle web service API into the well known IDA disassembler. </span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_41.setText(QtGui.QApplication.translate("frmVirusBattle", "About:", None, QtGui.QApplication.UnicodeUTF8))
         self.toolBox.setItemText(self.toolBox.indexOf(self.pageConfiguration), QtGui.QApplication.translate("frmVirusBattle", "Configuration", None, QtGui.QApplication.UnicodeUTF8))
         self.label_10.setText(QtGui.QApplication.translate("frmVirusBattle", "Uploaded binaries:", None, QtGui.QApplication.UnicodeUTF8))
         self.listBins.setToolTip(QtGui.QApplication.translate("frmVirusBattle", "List of binaries matched to the current binary", None, QtGui.QApplication.UnicodeUTF8))
@@ -713,12 +730,9 @@ class Ui_frmVirusBattle(object):
         self.listMatchedProcs.setToolTip(QtGui.QApplication.translate("frmVirusBattle", "List of binaries matched to the current binary", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidgetVB.setTabText(self.tabWidgetVB.indexOf(self.tab), QtGui.QApplication.translate("frmVirusBattle", "Matches", None, QtGui.QApplication.UnicodeUTF8))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), QtGui.QApplication.translate("frmVirusBattle", "VB", None, QtGui.QApplication.UnicodeUTF8))
-        self.browserAboutUs.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Virusbattle is a web service that analyses malware and other binaries with a variety of advanced static and dynamic analyses. For more information check out the </span><a href=\"http://ulsrl.org/project/VirusBattle/\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">Lab Website</span></a><span style=\" font-size:8pt;\">.The Plugin is an integration of Virusbattle web service API into the well known IDA disassembler. </span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("frmVirusBattle", "IDA Virus Battle", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.pageAbout), QtGui.QApplication.translate("frmVirusBattle", "About", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QtGui.QApplication.translate("frmVirusBattle", "AVScan", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QtGui.QApplication.translate("frmVirusBattle", "Behavior", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QtGui.QApplication.translate("frmVirusBattle", "PE Info", None, QtGui.QApplication.UnicodeUTF8))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QtGui.QApplication.translate("frmVirusBattle", "Other", None, QtGui.QApplication.UnicodeUTF8))
         self.lblStatus.setText(QtGui.QApplication.translate("frmVirusBattle", "idle", None, QtGui.QApplication.UnicodeUTF8))
 

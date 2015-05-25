@@ -8,9 +8,7 @@ from VBAsyncCommand import VBAsyncCommand
 from VBCache import VBCache
 from VBFunctionChooser import VBFunctionChooser
 from VBStringChooser import VBStringChooser
-from VBDotViewer import VBDotViewer
-import pydot
-import dot_parser
+from VBDisassemblyViewer import VBDisassemblyViewer
 import VBIDAHelper
 import os
 import json
@@ -313,8 +311,21 @@ class VBMainWidget(QtGui.QWidget):
                     'statuscode': 1,
                     'message': 'No procedure has been selected'
                 })
-        elif btnName == 'MatchedLeftProcMoreInfo' or btnName == 'MatchedRightProcMoreInfo':
-            print 'NOT IMPLEMENTED: IT WILL SHOW JUICE INFO IN A NEW IDA VIEW, GRAPHS, ...'
+        elif btnName == 'MatchedLeftProcMoreInfo':
+            if self.ui.listProcsWithSim.currentItem() is not None:
+                rva = self.ui.listProcsWithSim.currentItem().text()
+                hash = self.openedFileHash
+                dissViewer = VBDisassemblyViewer(self.juiciesCache.read(hash)[rva])
+                print dissViewer.Show()
+            else:
+                self.notifyStatus({
+                    'statuscode': 1,
+                    'message': 'No procedure has been selected'
+                })                        
+            # disassemblyInfo = self.juiciesCache.read(self.openedFileHash)[rva]
+            
+        elif btnName == 'MatchedRightProcMoreInfo':
+            pass
         elif btnName == 'ShowChild':
             childHash = self.ui.editChildHash.text()
             childSName = self.ui.editChildServiceName.text()
@@ -348,7 +359,7 @@ class VBMainWidget(QtGui.QWidget):
                         )
                     c.Show()
             if serviceName == 'srlStatic, srlCallgraph':
-                print graph_from_dot_data(buff)
+                pass
 
     def openMatchedProcsChooser(self, rvaStr):
         rva = int(rvaStr, 16)
