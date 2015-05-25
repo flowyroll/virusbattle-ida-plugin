@@ -366,7 +366,7 @@ class VBMainWidget(QtGui.QWidget):
                     callgraph = jsCallgraph['callgraph'].encode('ascii')
                     graph = graph_from_dot_data(callgraph)
                     try:
-                        path = '%s%sdownload%s%s.png'%(
+                        path = '%s%sdownload%s%s.callgraph.png'%(
                             self.currentDir, os.sep, os.sep, childHash
                         )
                         graph.write_png(path)
@@ -382,7 +382,7 @@ class VBMainWidget(QtGui.QWidget):
                     callgraph = jsCallgraph['library_graph'].encode('ascii')
                     graph = graph_from_dot_data(callgraph)
                     try:
-                        path = '%s%sdownload%s%s.png'%(
+                        path = '%s%sdownload%s%s.apiflowgraph.png'%(
                             self.currentDir, os.sep, os.sep, childHash
                         )
                         graph.write_png(path)
