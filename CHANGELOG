@@ -1,0 +1,11 @@
+VERSION 0.2
+--------------------------------------------------------------------------------
+- Changes of Directory structure for virusbattle-ida-plugin
+- Embeded 3rd party libraries including requests, pydot and pyparsing
+- Addition of this CHANGELOG
+- Context menu for matched procedures accessible in procs with similarity list
+- Addition of binary String List feature
+- Addition of pydot graph generation and view using GraphViz
+- Addition of `other` section for avscan, behavior, peinfo services
+- Hidden API Key
+- Bug fix: Environment variable for user profile on linux
