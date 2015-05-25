@@ -6,7 +6,7 @@ Virusbattle is a web service that analyses malware and other binaries with a var
 ### Dependecies:
 *	IDAPython
 *	pySide
-*	requests
+*	GraphViz (Optional)
 
 ### Usage: 
 *	Install GraphViz and add it to the default environment path (for generting and opening API flow and call graphs)
