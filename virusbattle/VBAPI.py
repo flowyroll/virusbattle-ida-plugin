@@ -236,3 +236,24 @@ class VBAPI(object):
                 'force_sim': 1 if force_sim else 0
             }
         )
+
+    @staticmethod
+    def avscans(APIKey, fileHash):
+        return VBAPI.get(
+            ['other/avscans', APIKey, fileHash],
+            {}
+        )
+
+     @staticmethod
+    def behaviors(APIKey, fileHash):
+        return VBAPI.get(
+            ['other/behaviors', APIKey, fileHash],
+            {}
+        )
+
+    @staticmethod
+    def pedata(APIKey, fileHash):
+        return VBAPI.get(
+            ['other/pedata', APIKey, fileHash],
+            {}
+        )

@@ -99,8 +99,6 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.tabWidgetVB.currentChanged.connect(self.tabWidgetVBChanged)
         
         self.ui.editAPIKey.textChanged.connect(self.editAPIKeyTextChanged)
-        # self.ui.editMatchedLeftProcRVA.textChanged.connect(self.editMatchedLeftProcRVATextChanged)
-        # self.ui.editMatchedRightProcRVA.textChanged.connect(self.editMatchedRightProcRVATextChanged)
 
     def showAPIKey(self):
         self.ui.editAPIKey.setEchoMode(QtGui.QLineEdit.Normal)
@@ -440,29 +438,6 @@ class VBMainWidget(QtGui.QWidget):
             matchedProcs = self.matchedProcsCache.read(self.openedFileHash+'/'+rva)
             for mProc in  matchedProcs:
                 self.ui.listMatchedProcs.addItem(mProc['proc_id'])
-    
-    # def editMatchedLeftProcRVATextChanged(self):
-    #     if self.ui.editMatchedLeftProcRVA.text() != '':
-    #         if self.ui.editMatchedRightProcRVA.text() != '':
-    #             self.ui.btnDiffProcs.setEnabled(True)
-    #         else:
-    #             self.ui.btnDiffProcs.setEnabled(False)
-    #         self.ui.btnMatchedLeftProcMoreInfo.setEnabled(True)
-    #     else:
-    #         self.ui.btnMatchedLeftProcMoreInfo.setEnabled(False)
-    #         self.ui.btnDiffProcs.setEnabled(False)
-
-    # def editMatchedRightProcRVATextChanged(self):
-    #     if self.ui.editMatchedRightProcRVA.text() != '':
-    #         if self.ui.editMatchedLeftProcRVA.text() != '':
-    #             self.ui.btnDiffProcs.setEnabled(True)
-    #         else:
-    #             self.ui.btnDiffProcs.setEnabled(False)
-
-    #         self.ui.btnMatchedRightProcMoreInfo.setEnabled(True)
-    #     else:
-    #         self.ui.btnMatchedRightProcMoreInfo.setEnabled(False)
-    #         self.ui.btnDiffProcs.setEnabled(False)
 
     def listMatchedProcsItemChanged(self, item):
         if item is not None:

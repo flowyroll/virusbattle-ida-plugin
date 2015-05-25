@@ -102,6 +102,15 @@ class VBAsyncCommand(QtCore.QObject, QtCore.QRunnable):
                         self.args[0], self.args[1], self.args[2])
                 else:
                     result = VBAPI.reprocess(self.args[0], self.args[1])            
+            elif self.command == 'avscans':
+                if len(self.args) > 1:
+                    result = VBAPI.avscans(self.args[0], self.args[1])
+            elif self.command == 'behaviors':
+                if len(self.args) > 1:
+                    result = VBAPI.behaviors(self.args[0], self.args[1])
+            elif self.command == 'pedata':
+                if len(self.args) > 1:
+                    result = VBAPI.pedata(self.args[0], self.args[1])
 
         except Exception as e:
             result = {
