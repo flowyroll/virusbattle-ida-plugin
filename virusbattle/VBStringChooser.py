@@ -27,9 +27,9 @@ class VBStringChooser(Choose2):
             for offset in offsets:
                 self.items.append(
                     [
-                        offset,#.encode('ascii','replace'),
-                        s,#.encode('ascii','replace'),
-                        self.binHash#.encode('ascii','replace')
+                        offset,
+                        s,
+                        self.binHash
                     ]
                 )
            
