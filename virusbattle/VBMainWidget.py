@@ -12,7 +12,9 @@ from VBDisassemblyViewer import VBDisassemblyViewer
 import VBIDAHelper
 import os
 import json
+from pydot.pydot import graph_from_dot_data
 from ctypes import *
+
 
 class VBMainWidget(QtGui.QWidget):
 
@@ -20,8 +22,7 @@ class VBMainWidget(QtGui.QWidget):
         super(VBMainWidget, self).__init__(parent)
         self.ui = Ui_frmVirusBattle()
         self.ui.setupUi(self)
-        self.APIKey = None        
-        
+        self.APIKey = None                
         self.initCaches()
         self.initSignals()
 
@@ -359,8 +360,18 @@ class VBMainWidget(QtGui.QWidget):
                             jsStrings['strings']
                         )
                     c.Show()  
-            if serviceName == 'srlStatic, srlCallgraph':
-                pass
+            if serviceName == 'srlStatic, srlCallgraph':                
+                jsCallgraph = json.loads(buff)
+                if 'callgraph' in jsCallgraph:
+                    callgraph = jsCallgraph['callgraph'].encode('ascii')
+                    graph = graph_from_dot_data(callgraph)
+                    try:
+                        graph.write_png('test.png')
+                    except Exception as e:
+                        self.notifyStatus({
+                            'statuscode': 1,
+                            'message': e
+                        })            
 
     def openMatchedProcsChooser(self, rvaStr):
         rva = int(rvaStr, 16)
