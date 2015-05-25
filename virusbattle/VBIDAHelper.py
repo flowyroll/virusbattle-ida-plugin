@@ -63,3 +63,6 @@ def addMenuItem(root, title, hotkey, cb, *args):
 
 def currentFunctionRVA():
     return hex(abs(get_imagebase() - get_func(get_screen_ea()).startEA))
+
+def getIDAPath():
+    return idadir('idaq.exe')

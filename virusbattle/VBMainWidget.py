@@ -385,12 +385,25 @@ class VBMainWidget(QtGui.QWidget):
                             self.currentDir, os.sep, os.sep, childHash
                         )
                         graph.write_png(path)
-                        os.system(path) #should be checked and adjusted on linux
+                        os.startfile(path) #should be checked and adjusted on linux
                     except Exception as e:
                         self.notifyStatus({
                             'statuscode': 1,
                             'message': e
                         })
+            elif serviceName == 'srlUnpacker':
+                pass
+                # path =  '%s%s%s.%s'%(
+                #     self.downloadFolder, 
+                #     os.sep, 
+                #     childHash, 
+                #     self.getExtension(serviceName)
+                # )
+                # ida = VBIDAHelper.getIDAPath()
+                # cmd = '"%s" "%s"'%(ida, path)
+                # cmd = cmd.replace(os.sep, os.sep+os.sep)
+                # print cmd
+                # os.system(cmd)
 
     def openMatchedProcsChooser(self, rvaStr):
         rva = int(rvaStr, 16)
