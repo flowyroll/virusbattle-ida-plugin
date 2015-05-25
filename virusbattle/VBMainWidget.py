@@ -39,8 +39,10 @@ class VBMainWidget(QtGui.QWidget):
             self.openedFileHash = VBIDAHelper.SHA1File(self.openedFilePath)
         except:
             pass
+        
         if self.openedFileHash != '':
             self.ui.lblOpenFileHash.setText('Current file hash: %s' % self.openedFileHash)
+            self.ui.editOtherSHA.setText(self.openedFileHash)
         else:
             self.openedFilePath = ''
             self.ui.lblOpenFileHash.setText('Current file could be not found.')
@@ -82,6 +84,7 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.btnMatchedLeftProcMoreInfo.clicked.connect(self.buttonClicked)
         self.ui.btnMatchedRightProcMoreInfo.clicked.connect(self.buttonClicked)
         self.ui.btnShowChild.clicked.connect(self.buttonClicked)
+        self.ui.btnShowBinOther.clicked.connect(self.buttonClicked)
 
         self.ui.btnShowAPIKey.pressed.connect(self.showAPIKey)
         self.ui.btnShowAPIKey.released.connect(self.hideAPIKey)
@@ -324,13 +327,17 @@ class VBMainWidget(QtGui.QWidget):
                     'message': 'No procedure has been selected'
                 })                        
             # disassemblyInfo = self.juiciesCache.read(self.openedFileHash)[rva]
-            
         elif btnName == 'MatchedRightProcMoreInfo':
             pass
         elif btnName == 'ShowChild':
             childHash = self.ui.editChildHash.text()
             childSName = self.ui.editChildServiceName.text()
-            self.showChildView(childHash, childSName)            
+            self.showChildView(childHash, childSName)
+        elif btnName == 'ShowBinOther':
+            if self.ui.listBins.currentItem() is not None:
+                hash = self.ui.listBins.currentItem().text()
+                self.ui.editOtherSHA.setText(hash)
+                self.ui.toolBox.setCurrentIndex(2)
         else:
             self.status('idle', 'black')
 
@@ -889,12 +896,13 @@ class VBMainWidget(QtGui.QWidget):
             cmd.start()   
 
     def tabWidgetOtherChanged(self, index):
+        hash = self.ui.editOtherSHA.text().strip()
         if index == 0:
-            self.avscans(self.openedFileHash)
+            self.avscans(hash)
         if index == 1:
-            self.behaviors(self.openedFileHash)
+            self.behaviors(hash)
         if index == 2:
-            self.pedata(self.openedFileHash)
+            self.pedata(hash)
 
     def toolBoxCurrentChanged(self, index):        
         if index == 1:

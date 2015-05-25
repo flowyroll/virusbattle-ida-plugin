@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Mon May 25 23:11:05 2015
+# Created: Mon May 25 23:54:40 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -243,6 +243,16 @@ class Ui_frmVirusBattle(object):
         self.label_25 = QtGui.QLabel(self.groupBinary)
         self.label_25.setGeometry(QtCore.QRect(10, 20, 91, 16))
         self.label_25.setObjectName("label_25")
+        self.btnShowBinOther = QtGui.QPushButton(self.groupBinary)
+        self.btnShowBinOther.setEnabled(True)
+        self.btnShowBinOther.setGeometry(QtCore.QRect(10, 240, 21, 20))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.btnShowBinOther.setFont(font)
+        self.btnShowBinOther.setStyleSheet("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));")
+        self.btnShowBinOther.setText("")
+        self.btnShowBinOther.setFlat(False)
+        self.btnShowBinOther.setObjectName("btnShowBinOther")
         self.groupChild = QtGui.QGroupBox(self.tab_2)
         self.groupChild.setEnabled(True)
         self.groupChild.setGeometry(QtCore.QRect(460, 10, 251, 271))
@@ -593,7 +603,7 @@ class Ui_frmVirusBattle(object):
         self.page_2.setGeometry(QtCore.QRect(0, 0, 731, 310))
         self.page_2.setObjectName("page_2")
         self.tabWidgetOther = QtGui.QTabWidget(self.page_2)
-        self.tabWidgetOther.setGeometry(QtCore.QRect(0, 0, 731, 301))
+        self.tabWidgetOther.setGeometry(QtCore.QRect(0, 30, 731, 271))
         self.tabWidgetOther.setObjectName("tabWidgetOther")
         self.tab_3 = QtGui.QWidget()
         self.tab_3.setObjectName("tab_3")
@@ -613,6 +623,18 @@ class Ui_frmVirusBattle(object):
         self.textBrowserPEInfo.setGeometry(QtCore.QRect(7, 10, 711, 261))
         self.textBrowserPEInfo.setObjectName("textBrowserPEInfo")
         self.tabWidgetOther.addTab(self.tab_5, "")
+        self.label_44 = QtGui.QLabel(self.page_2)
+        self.label_44.setGeometry(QtCore.QRect(0, 2, 101, 16))
+        self.label_44.setObjectName("label_44")
+        self.editOtherSHA = QtGui.QLineEdit(self.page_2)
+        self.editOtherSHA.setEnabled(True)
+        self.editOtherSHA.setGeometry(QtCore.QRect(60, 0, 331, 20))
+        self.editOtherSHA.setText("")
+        self.editOtherSHA.setReadOnly(False)
+        self.editOtherSHA.setObjectName("editOtherSHA")
+        self.btnReloadOther = QtGui.QPushButton(self.page_2)
+        self.btnReloadOther.setGeometry(QtCore.QRect(400, -1, 51, 23))
+        self.btnReloadOther.setObjectName("btnReloadOther")
         self.toolBox.addItem(self.page_2, "")
         self.line = QtGui.QFrame(frmVirusBattle)
         self.line.setGeometry(QtCore.QRect(10, 400, 731, 20))
@@ -768,6 +790,8 @@ class Ui_frmVirusBattle(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_5), QtGui.QApplication.translate("frmVirusBattle", "PE Info", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_44.setText(QtGui.QApplication.translate("frmVirusBattle", "SHA Hash:", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnReloadOther.setText(QtGui.QApplication.translate("frmVirusBattle", "Reload", None, QtGui.QApplication.UnicodeUTF8))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QtGui.QApplication.translate("frmVirusBattle", "Other", None, QtGui.QApplication.UnicodeUTF8))
         self.lblStatus.setText(QtGui.QApplication.translate("frmVirusBattle", "idle", None, QtGui.QApplication.UnicodeUTF8))
 
