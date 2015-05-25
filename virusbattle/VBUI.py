@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Mon May 25 15:28:09 2015
+# Created: Mon May 25 16:08:21 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -668,6 +668,8 @@ class Ui_frmVirusBattle(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Virusbattle is a web service that analyses malware and other binaries with a variety of advanced static and dynamic analyses. For more information check out the </span><a href=\"http://ulsrl.org/project/VirusBattle/\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">Lab Website</span></a><span style=\" font-size:8pt;\">.This Plugin is an integration of Virusbattle web service API into the well known IDA disassembler. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Contributed with love by </span><a href=\"http://www.moghimi.me\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">Moghimi</span></a><span style=\" font-size:8pt;\">.  </span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.label_41.setText(QtGui.QApplication.translate("frmVirusBattle", "About:", None, QtGui.QApplication.UnicodeUTF8))
