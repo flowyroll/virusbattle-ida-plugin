@@ -10,7 +10,9 @@ from VBFunctionChooser import VBFunctionChooser
 from VBStringChooser import VBStringChooser
 from VBDisassemblyViewer import VBDisassemblyViewer
 from pydot.pydot import graph_from_dot_data
+from string import Template
 import VBIDAHelper
+from template.VBTemplateHelper import VBTemplateHelper
 import os
 import json
 from VBAPI import VBAPI
@@ -852,11 +854,23 @@ class VBMainWidget(QtGui.QWidget):
             self.loadBinaryTab()
         if index == 1:
             self.loadMatchedTab()
-
+    
     def avscansFinished(self, result):
         self.notifyStatus(result)
         self.waitCursor(False)
-        print result
+        template = None
+        if result['statuscode'] == 0:         
+            template = VBTemplateHelper.buildAVScansPage(result['answer'])               
+        else:
+            template = VBTemplateHelper.loadTemplate('nodata')
+        
+        if template is not None:
+            self.ui.textBrowserAVScan.setHtml(template)
+        else:
+            self.notifyStatus({
+                'statuscode': 1,
+                'message': 'Template could not be loaded'
+            })
 
     def avscans(self, hash):
         if self.checkAPIKey():
@@ -868,9 +882,23 @@ class VBMainWidget(QtGui.QWidget):
             cmd.start()        
 
     def behaviorsFinished(self, result):
+        print result
         self.notifyStatus(result)
         self.waitCursor(False)
-        print result
+        template = None
+        if result['statuscode'] == 0:         
+            # template = VBTemplateHelper.buildAVScansPage(result['answer'])               
+            print result
+        else:
+            template = VBTemplateHelper.loadTemplate('nodata')
+        
+        if template is not None:
+            self.ui.textBrowserBehavior.setHtml(template)
+        else:
+            self.notifyStatus({
+                'statuscode': 1,
+                'message': 'Template could not be loaded'
+            })
 
     def behaviors(self, hash):
         if self.checkAPIKey():
@@ -882,9 +910,23 @@ class VBMainWidget(QtGui.QWidget):
             cmd.start()           
 
     def pedataFinished(self, result):
+        print result
         self.notifyStatus(result)
         self.waitCursor(False)
-        print result
+        template = None
+        if result['statuscode'] == 0:         
+            print result
+            # template = VBTemplateHelper.buildAVScansPage(result['answer'])               
+        else:
+            template = VBTemplateHelper.loadTemplate('nodata')
+        
+        if template is not None:
+            self.ui.textBrowserPEInfo.setHtml(template)
+        else:
+            self.notifyStatus({
+                'statuscode': 1,
+                'message': 'Template could not be loaded'
+            })
 
     def pedata(self, hash):
         if self.checkAPIKey():

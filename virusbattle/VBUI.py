@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Mon May 25 23:54:40 2015
+# Created: Tue May 26 01:02:36 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -608,19 +608,19 @@ class Ui_frmVirusBattle(object):
         self.tab_3 = QtGui.QWidget()
         self.tab_3.setObjectName("tab_3")
         self.textBrowserAVScan = QtGui.QTextBrowser(self.tab_3)
-        self.textBrowserAVScan.setGeometry(QtCore.QRect(6, 10, 711, 261))
+        self.textBrowserAVScan.setGeometry(QtCore.QRect(6, 10, 711, 231))
         self.textBrowserAVScan.setObjectName("textBrowserAVScan")
         self.tabWidgetOther.addTab(self.tab_3, "")
         self.tab_4 = QtGui.QWidget()
         self.tab_4.setObjectName("tab_4")
         self.textBrowserBehavior = QtGui.QTextBrowser(self.tab_4)
-        self.textBrowserBehavior.setGeometry(QtCore.QRect(7, 10, 711, 261))
+        self.textBrowserBehavior.setGeometry(QtCore.QRect(7, 10, 711, 231))
         self.textBrowserBehavior.setObjectName("textBrowserBehavior")
         self.tabWidgetOther.addTab(self.tab_4, "")
         self.tab_5 = QtGui.QWidget()
         self.tab_5.setObjectName("tab_5")
         self.textBrowserPEInfo = QtGui.QTextBrowser(self.tab_5)
-        self.textBrowserPEInfo.setGeometry(QtCore.QRect(7, 10, 711, 261))
+        self.textBrowserPEInfo.setGeometry(QtCore.QRect(7, 10, 711, 231))
         self.textBrowserPEInfo.setObjectName("textBrowserPEInfo")
         self.tabWidgetOther.addTab(self.tab_5, "")
         self.label_44 = QtGui.QLabel(self.page_2)
@@ -770,25 +770,19 @@ class Ui_frmVirusBattle(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_3), QtGui.QApplication.translate("frmVirusBattle", "AVScan", None, QtGui.QApplication.UnicodeUTF8))
         self.textBrowserBehavior.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_4), QtGui.QApplication.translate("frmVirusBattle", "Behavior", None, QtGui.QApplication.UnicodeUTF8))
         self.textBrowserPEInfo.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_5), QtGui.QApplication.translate("frmVirusBattle", "PE Info", None, QtGui.QApplication.UnicodeUTF8))
         self.label_44.setText(QtGui.QApplication.translate("frmVirusBattle", "SHA Hash:", None, QtGui.QApplication.UnicodeUTF8))
         self.btnReloadOther.setText(QtGui.QApplication.translate("frmVirusBattle", "Reload", None, QtGui.QApplication.UnicodeUTF8))
