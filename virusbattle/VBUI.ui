@@ -35,7 +35,7 @@
     <enum>QFrame::Raised</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -138,12 +138,6 @@
        <string>Email:</string>
       </property>
      </widget>
-     <zorder>label_2</zorder>
-     <zorder>btnRegister</zorder>
-     <zorder>editName</zorder>
-     <zorder>editEmail</zorder>
-     <zorder>label</zorder>
-     <zorder>horizontalLayoutWidget</zorder>
     </widget>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
@@ -2099,16 +2093,46 @@ p, li { white-space: pre-wrap; }
       <attribute name="title">
        <string>AVScan</string>
       </attribute>
+      <widget class="QTextBrowser" name="textBrowserAVScan">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>10</y>
+         <width>711</width>
+         <height>261</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>Behavior</string>
       </attribute>
+      <widget class="QTextBrowser" name="textBrowserBehavior">
+       <property name="geometry">
+        <rect>
+         <x>7</x>
+         <y>10</y>
+         <width>711</width>
+         <height>261</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
        <string>PE Info</string>
       </attribute>
+      <widget class="QTextBrowser" name="textBrowserPEInfo">
+       <property name="geometry">
+        <rect>
+         <x>7</x>
+         <y>10</y>
+         <width>711</width>
+         <height>261</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>
