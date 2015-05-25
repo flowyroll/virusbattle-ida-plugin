@@ -25,13 +25,7 @@ class VBStringChooser(Choose2):
             s = x[0]
             offsets = x[1]
             for offset in offsets:
-                self.items.append(
-                    [
-                        offset,
-                        s,
-                        self.binHash
-                    ]
-                )
+                self.items.append([offset, s, self.binHash])
            
     def OnClose(self):
         pass
@@ -48,4 +42,3 @@ class VBStringChooser(Choose2):
     def OnRefresh(self, n):
         self.populateItems()
         return n
-        
