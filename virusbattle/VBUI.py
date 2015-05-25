@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Mon May 25 16:08:21 2015
+# Created: Mon May 25 23:11:05 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -98,10 +98,10 @@ class Ui_frmVirusBattle(object):
         self.label_6.setGeometry(QtCore.QRect(10, 29, 91, 20))
         self.label_6.setObjectName("label_6")
         self.label_7 = QtGui.QLabel(self.groupBox_8)
-        self.label_7.setGeometry(QtCore.QRect(10, 99, 91, 20))
+        self.label_7.setGeometry(QtCore.QRect(10, 97, 91, 20))
         self.label_7.setObjectName("label_7")
         self.btnHighlightColorChooser = QtGui.QPushButton(self.groupBox_8)
-        self.btnHighlightColorChooser.setGeometry(QtCore.QRect(90, 99, 21, 21))
+        self.btnHighlightColorChooser.setGeometry(QtCore.QRect(90, 100, 51, 16))
         self.btnHighlightColorChooser.setStyleSheet("background-color: rgb(170, 255, 0);")
         self.btnHighlightColorChooser.setObjectName("btnHighlightColorChooser")
         self.btnRemoveHighlights = QtGui.QPushButton(self.groupBox_8)
@@ -117,13 +117,13 @@ class Ui_frmVirusBattle(object):
         self.checkUpperHalf.setGeometry(QtCore.QRect(10, 120, 101, 17))
         self.checkUpperHalf.setObjectName("checkUpperHalf")
         self.checkNoLibProc = QtGui.QCheckBox(self.groupBox_7)
-        self.checkNoLibProc.setGeometry(QtCore.QRect(100, 120, 201, 20))
+        self.checkNoLibProc.setGeometry(QtCore.QRect(10, 140, 201, 20))
         self.checkNoLibProc.setObjectName("checkNoLibProc")
         self.label_9 = QtGui.QLabel(self.groupBox_7)
-        self.label_9.setGeometry(QtCore.QRect(10, 86, 91, 20))
+        self.label_9.setGeometry(QtCore.QRect(140, 90, 91, 20))
         self.label_9.setObjectName("label_9")
         self.boxThreshold = QtGui.QDoubleSpinBox(self.groupBox_7)
-        self.boxThreshold.setGeometry(QtCore.QRect(70, 86, 62, 22))
+        self.boxThreshold.setGeometry(QtCore.QRect(200, 90, 51, 22))
         self.boxThreshold.setMaximum(1.0)
         self.boxThreshold.setSingleStep(0.1)
         self.boxThreshold.setProperty("value", 0.5)
@@ -142,6 +142,12 @@ class Ui_frmVirusBattle(object):
         self.btnShowAPIKey.setDefault(False)
         self.btnShowAPIKey.setFlat(False)
         self.btnShowAPIKey.setObjectName("btnShowAPIKey")
+        self.label_43 = QtGui.QLabel(self.groupBox_7)
+        self.label_43.setGeometry(QtCore.QRect(10, 90, 91, 20))
+        self.label_43.setObjectName("label_43")
+        self.editServerPort = QtGui.QLineEdit(self.groupBox_7)
+        self.editServerPort.setGeometry(QtCore.QRect(70, 90, 41, 20))
+        self.editServerPort.setObjectName("editServerPort")
         self.browserAboutUs = QtGui.QTextBrowser(self.pageConfiguration)
         self.browserAboutUs.setGeometry(QtCore.QRect(0, 20, 201, 171))
         self.browserAboutUs.setOpenExternalLinks(True)
@@ -663,6 +669,10 @@ class Ui_frmVirusBattle(object):
         self.editAPIKey.setToolTip(QtGui.QApplication.translate("frmVirusBattle", "<html><head/><body><p>Email Address</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.editAPIKey.setWhatsThis(QtGui.QApplication.translate("frmVirusBattle", "<html><head/><body><p><br/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.btnShowAPIKey.setText(QtGui.QApplication.translate("frmVirusBattle", "Show", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_43.setText(QtGui.QApplication.translate("frmVirusBattle", "Server Port:", None, QtGui.QApplication.UnicodeUTF8))
+        self.editServerPort.setToolTip(QtGui.QApplication.translate("frmVirusBattle", "<html><head/><body><p>Email Address</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.editServerPort.setWhatsThis(QtGui.QApplication.translate("frmVirusBattle", "<html><head/><body><p><br/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.editServerPort.setText(QtGui.QApplication.translate("frmVirusBattle", "80", None, QtGui.QApplication.UnicodeUTF8))
         self.browserAboutUs.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

@@ -350,7 +350,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>99</y>
+        <y>97</y>
         <width>91</width>
         <height>20</height>
        </rect>
@@ -363,9 +363,9 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>99</y>
-        <width>21</width>
-        <height>21</height>
+        <y>100</y>
+        <width>51</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -426,8 +426,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QCheckBox" name="checkNoLibProc">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>120</y>
+        <x>10</x>
+        <y>140</y>
         <width>201</width>
         <height>20</height>
        </rect>
@@ -439,8 +439,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>86</y>
+        <x>140</x>
+        <y>90</y>
         <width>91</width>
         <height>20</height>
        </rect>
@@ -452,9 +452,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QDoubleSpinBox" name="boxThreshold">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>86</y>
-        <width>62</width>
+        <x>200</x>
+        <y>90</y>
+        <width>51</width>
         <height>22</height>
        </rect>
       </property>
@@ -523,6 +523,38 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="flat">
        <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Server Port:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="editServerPort">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>90</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Email Address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>80</string>
       </property>
      </widget>
     </widget>

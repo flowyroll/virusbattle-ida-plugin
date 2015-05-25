@@ -3,9 +3,14 @@
 """
 import requests
 
-API_BASE_URL = 'http://api.virusbattle.com/'
-
 class VBAPI(object): 
+    API_BASE_URL = 'http://api.virusbattle.com'
+    API_PORT = '80'
+
+    @staticmethod
+    def setAPIPort(port):
+        VBAPI.API_PORT = port
+
     """Virusbattle REST Web Service API Client Class
     Check http://api.virusbattle.com/docs for complete documentation
     """
@@ -39,7 +44,7 @@ class VBAPI(object):
         Returns:
             TYPE: String
         """
-        return API_BASE_URL + '/'.join(sections)
+        return VBAPI.API_BASE_URL + ':' + VBAPI.API_PORT + '/' + '/'.join(sections)
 
     @staticmethod
     def get(sections, params, download=False, stream=False):

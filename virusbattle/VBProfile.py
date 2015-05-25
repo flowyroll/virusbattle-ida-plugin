@@ -11,19 +11,19 @@ class VBProfile(object):
         TYPE: Description
     """
     def __init__(self, name=None, key=None, hCaption=None, hColor=None, 
-        threshold=None, upperHalf=None, noLibProc=None):
+        threshold=None, upperHalf=None, noLibProc=None, serverPort=None):
         """Constructor for VBProfile
         
         Returns:
             TYPE: Description
         """
-        self.setConfig(name, key, hCaption, hColor, threshold, upperHalf, noLibProc)
+        self.setConfig(name, key, hCaption, hColor, threshold, upperHalf, noLibProc, serverPort)
         try:
             self.configPath = os.environ['USERPROFILE'] + os.sep + '.VirusBattle'
         except:
             self.configPath = os.environ['$HOME'] + os.sep + '.VirusBattle'
 
-    def setConfig(self, name, key, hCaption, hColor, threshold, upperHalf, noLibProc):
+    def setConfig(self, name, key, hCaption, hColor, threshold, upperHalf, noLibProc, serverPort=80):
         """Set configuration parameters
         
         Args:
@@ -45,7 +45,8 @@ class VBProfile(object):
             'HighlightColor': hColor,
             'Threshold': threshold,
             'Upperhalf': upperHalf,
-            'NoLibProc': noLibProc
+            'NoLibProc': noLibProc,
+            'serverPort': serverPort
         }
 
     def readConfig(self):
@@ -141,6 +142,7 @@ class VBProfile(object):
                         config['Threshold'],
                         config['Upperhalf'],
                         config['NoLibProc'],
+                        config['serverPort']
                     )
                     return profile
 
@@ -170,6 +172,7 @@ class VBProfile(object):
                         config['Threshold'],
                         config['Upperhalf'],
                         config['NoLibProc'],
+                        config['serverPort']
                     )
                 )
         return profiles

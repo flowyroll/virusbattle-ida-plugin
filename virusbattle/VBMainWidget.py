@@ -9,12 +9,11 @@ from VBCache import VBCache
 from VBFunctionChooser import VBFunctionChooser
 from VBStringChooser import VBStringChooser
 from VBDisassemblyViewer import VBDisassemblyViewer
+from pydot.pydot import graph_from_dot_data
 import VBIDAHelper
 import os
 import json
-from pydot.pydot import graph_from_dot_data
-from ctypes import *
-
+from VBAPI import VBAPI
 
 class VBMainWidget(QtGui.QWidget):
 
@@ -185,12 +184,13 @@ class VBMainWidget(QtGui.QWidget):
 
         profile = VBProfile(
             profileName,
-            self.ui.editAPIKey.toPlainText().strip(),
+            self.ui.editAPIKey.text().strip(),
             self.ui.editHighlightCaption.toPlainText().strip(),
             self.ui.btnHighlightColorChooser.styleSheet(),
             self.ui.boxThreshold.value(),
             True if self.ui.checkUpperHalf.checkState() == QtCore.Qt.CheckState.Checked else False,
-            True if self.ui.checkNoLibProc.checkState() == QtCore.Qt.CheckState.Checked else False
+            True if self.ui.checkNoLibProc.checkState() == QtCore.Qt.CheckState.Checked else False,
+            self.ui.editServerPort.text().strip()
         )
         result = profile.save()
         self.loadListProfiles()
@@ -248,7 +248,8 @@ class VBMainWidget(QtGui.QWidget):
 
         self.ui.checkNoLibProc.setCheckState(QtCore.Qt.CheckState.Checked if cfg['NoLibProc']
                                              else QtCore.Qt.CheckState.Unchecked)
-
+        self.ui.editServerPort.setText(cfg['serverPort'])
+        VBAPI.setAPIPort(cfg['serverPort'])
         self.notifyStatus({
             'statuscode': 0,
             'message': 'Profile loaded successfully'
