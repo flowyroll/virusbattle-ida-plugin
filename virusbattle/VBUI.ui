@@ -35,7 +35,7 @@
     <enum>QFrame::Raised</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -56,7 +56,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>180</y>
        <width>201</width>
        <height>101</height>
       </rect>
@@ -138,6 +138,12 @@
        <string>Email:</string>
       </property>
      </widget>
+     <zorder>label_2</zorder>
+     <zorder>btnRegister</zorder>
+     <zorder>editName</zorder>
+     <zorder>editEmail</zorder>
+     <zorder>label</zorder>
+     <zorder>horizontalLayoutWidget</zorder>
     </widget>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
@@ -530,7 +536,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>130</y>
+       <y>20</y>
        <width>201</width>
        <height>151</height>
       </rect>
@@ -550,7 +556,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>110</y>
+       <y>0</y>
        <width>51</width>
        <height>20</height>
       </rect>

@@ -9,7 +9,7 @@ Virusbattle is a web service that analyses malware and other binaries with a var
 *	requests
 
 ### Usage: 
-*	`pip install requests`
+*	Install GraphViz and add it to the default environment path (for generting and opening API flow and call graphs)
 *	Prepare an IDA with pySide support
 *	`IDA -> File -> Script file... -> [choose VirusBattle_IDA_Plugin.py]`
 *	As a shortcut too see matched procedures for current function: `IDA -> View -> [VB] Matched Procs` or simply `Alt+Shift+V`

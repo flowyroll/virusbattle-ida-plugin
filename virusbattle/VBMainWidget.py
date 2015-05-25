@@ -360,18 +360,38 @@ class VBMainWidget(QtGui.QWidget):
                             jsStrings['strings']
                         )
                     c.Show()  
-            if serviceName == 'srlStatic, srlCallgraph':                
+            elif serviceName == 'srlStatic, srlCallgraph':
                 jsCallgraph = json.loads(buff)
                 if 'callgraph' in jsCallgraph:
                     callgraph = jsCallgraph['callgraph'].encode('ascii')
                     graph = graph_from_dot_data(callgraph)
                     try:
-                        graph.write_png('test.png')
+                        path = '%s%sdownload%s%s.png'%(
+                            self.currentDir, os.sep, os.sep, childHash
+                        )
+                        graph.write_png(path)
+                        os.system(path)
                     except Exception as e:
                         self.notifyStatus({
                             'statuscode': 1,
                             'message': e
-                        })            
+                        })
+            elif serviceName == 'srlStatic, srlAPIForwardFlowGraph':
+                jsCallgraph = json.loads(buff)
+                if 'library_graph' in jsCallgraph:
+                    callgraph = jsCallgraph['library_graph'].encode('ascii')
+                    graph = graph_from_dot_data(callgraph)
+                    try:
+                        path = '%s%sdownload%s%s.png'%(
+                            self.currentDir, os.sep, os.sep, childHash
+                        )
+                        graph.write_png(path)
+                        os.system(path) #should be checked and adjusted on linux
+                    except Exception as e:
+                        self.notifyStatus({
+                            'statuscode': 1,
+                            'message': e
+                        })
 
     def openMatchedProcsChooser(self, rvaStr):
         rva = int(rvaStr, 16)
@@ -853,25 +873,27 @@ class VBMainWidget(QtGui.QWidget):
 
     def listChildrenItemChanged(self, item):
         if item is not None and self.ui.listBins.currentItem() is not None:
-            children = self.binaryInfoCache.read(self.ui.listBins.currentItem().text())['children']
-            for child in children:
-                if child['child'] == item.text():
-                    break
-            if type(child) is dict:
-                self.ui.btnDownloadChildBinary.setEnabled(True)
-                self.ui.editChildHash.setText(child['child'])
-                if 'status' in child:
-                    self.ui.editChildStatus.setText(child['status'])
-                if 'service_name' in child:
-                    serviceName = child['service_name']
-                    if serviceName == 'srlStatic':
-                        serviceName = "%s, %s"%(serviceName, child['service_data']['analysis_name'])
-                    self.ui.editChildServiceName.setText(serviceName)
-                if 'service_data' in child:
-                    serviceData = child['service_data']
-                    if 'unpacker_result' in serviceData:
-                        self.ui.editChildUnpackerTime.setText(serviceData['unpacker_result']['time'])
-                        self.ui.editChildUnpackerMessage.setText(serviceData['unpacker_result']['message'])
+            cache = self.binaryInfoCache.read(self.ui.listBins.currentItem().text())
+            if cache is not None:
+                children = cache['children']
+                for child in children:
+                    if child['child'] == item.text():
+                        break
+                if type(child) is dict:
+                    self.ui.btnDownloadChildBinary.setEnabled(True)
+                    self.ui.editChildHash.setText(child['child'])
+                    if 'status' in child:
+                        self.ui.editChildStatus.setText(child['status'])
+                    if 'service_name' in child:
+                        serviceName = child['service_name']
+                        if serviceName == 'srlStatic':
+                            serviceName = "%s, %s"%(serviceName, child['service_data']['analysis_name'])
+                        self.ui.editChildServiceName.setText(serviceName)
+                    if 'service_data' in child:
+                        serviceData = child['service_data']
+                        if 'unpacker_result' in serviceData:
+                            self.ui.editChildUnpackerTime.setText(serviceData['unpacker_result']['time'])
+                            self.ui.editChildUnpackerMessage.setText(serviceData['unpacker_result']['message'])
 
     def downloadFinished(self, path):
         self.notifyStatus({
