@@ -35,7 +35,7 @@
     <enum>QFrame::Raised</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -56,7 +56,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>180</y>
+       <y>200</y>
        <width>201</width>
        <height>101</height>
       </rect>
@@ -145,7 +145,7 @@
        <x>480</x>
        <y>0</y>
        <width>191</width>
-       <height>281</height>
+       <height>301</height>
       </rect>
      </property>
      <property name="title">
@@ -170,7 +170,7 @@
         <x>10</x>
         <y>30</y>
         <width>171</width>
-        <height>121</height>
+        <height>141</height>
        </rect>
       </property>
      </widget>
@@ -178,7 +178,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>220</y>
         <width>101</width>
         <height>20</height>
        </rect>
@@ -191,7 +191,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>220</y>
+        <y>240</y>
         <width>171</width>
         <height>20</height>
        </rect>
@@ -210,7 +210,7 @@
       <property name="geometry">
        <rect>
         <x>120</x>
-        <y>250</y>
+        <y>270</y>
         <width>61</width>
         <height>23</height>
        </rect>
@@ -235,7 +235,7 @@
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>160</y>
+        <y>180</y>
         <width>51</width>
         <height>23</height>
        </rect>
@@ -260,7 +260,7 @@
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>160</y>
+        <y>180</y>
         <width>51</width>
         <height>23</height>
        </rect>
@@ -285,7 +285,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>160</y>
+        <y>180</y>
         <width>51</width>
         <height>23</height>
        </rect>
@@ -308,7 +308,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>150</y>
+       <y>170</y>
        <width>261</width>
        <height>131</height>
       </rect>
@@ -404,7 +404,7 @@ p, li { white-space: pre-wrap; }
        <x>210</x>
        <y>0</y>
        <width>261</width>
-       <height>141</height>
+       <height>161</height>
       </rect>
      </property>
      <property name="title">
@@ -414,7 +414,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>114</y>
+        <y>120</y>
         <width>101</width>
         <height>17</height>
        </rect>
@@ -427,7 +427,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>114</y>
+        <y>120</y>
         <width>201</width>
         <height>20</height>
        </rect>
@@ -440,7 +440,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>84</y>
+        <y>86</y>
         <width>91</width>
         <height>20</height>
        </rect>
@@ -453,7 +453,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>84</y>
+        <y>86</y>
         <width>62</width>
         <height>22</height>
        </rect>
@@ -532,7 +532,7 @@ p, li { white-space: pre-wrap; }
        <x>0</x>
        <y>20</y>
        <width>201</width>
-       <height>151</height>
+       <height>171</height>
       </rect>
      </property>
      <property name="html">
@@ -540,7 +540,9 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Virusbattle is a web service that analyses malware and other binaries with a variety of advanced static and dynamic analyses. For more information check out the &lt;/span&gt;&lt;a href=&quot;http://ulsrl.org/project/VirusBattle/&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;Lab Website&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;.The Plugin is an integration of Virusbattle web service API into the well known IDA disassembler. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Virusbattle is a web service that analyses malware and other binaries with a variety of advanced static and dynamic analyses. For more information check out the &lt;/span&gt;&lt;a href=&quot;http://ulsrl.org/project/VirusBattle/&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;Lab Website&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;.This Plugin is an integration of Virusbattle web service API into the well known IDA disassembler. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Contributed with love by &lt;/span&gt;&lt;a href=&quot;http://www.moghimi.me&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;Moghimi&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;.  &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="openExternalLinks">
       <bool>true</bool>
@@ -2107,11 +2109,9 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Hash: &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;0022349caf76152dc0bfda97d91215315aaea6c4    		&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Size: &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;143360 bytes    		&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Rate: &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;24/46    		&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;First Seen: &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;2013-03-05 18:15:56    		&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Scan Date: &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;2013-03-05 18:15:56    	            &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;No data available for this binary.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
