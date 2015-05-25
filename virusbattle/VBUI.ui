@@ -2079,7 +2079,7 @@ p, li { white-space: pre-wrap; }
     <attribute name="label">
      <string>Other</string>
     </attribute>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tabWidgetOther">
      <property name="geometry">
       <rect>
        <x>0</x>

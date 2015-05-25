@@ -97,6 +97,7 @@ class VBMainWidget(QtGui.QWidget):
 
         self.ui.toolBox.currentChanged.connect(self.toolBoxCurrentChanged)
         self.ui.tabWidgetVB.currentChanged.connect(self.tabWidgetVBChanged)
+        self.ui.tabWidgetOther.currentChanged.connect(self.tabWidgetOtherChanged)
         
         self.ui.editAPIKey.textChanged.connect(self.editAPIKeyTextChanged)
 
@@ -831,12 +832,65 @@ class VBMainWidget(QtGui.QWidget):
         if index == 1:
             self.loadMatchedTab()
 
+    def avscansFinished(self, result):
+        self.notifyStatus(result)
+        self.waitCursor(False)
+        print result
+
+    def avscans(self, hash):
+        if self.checkAPIKey():
+            cmd = VBAsyncCommand('avscans', self.APIKey, hash)
+            cmd.finishedProcessing.connect(self.avscansFinished)
+            self.waitCursor(True)
+            self.status('Loading avscans information for binary %s...'%hash
+                , 'black')
+            cmd.start()        
+
+    def behaviorsFinished(self, result):
+        self.notifyStatus(result)
+        self.waitCursor(False)
+        print result
+
+    def behaviors(self, hash):
+        if self.checkAPIKey():
+            cmd = VBAsyncCommand('behaviors', self.APIKey, hash)
+            cmd.finishedProcessing.connect(self.behaviorsFinished)
+            self.waitCursor(True)
+            self.status('Loading behaviors information for binary %s...'%hash
+                , 'black')
+            cmd.start()           
+
+    def pedataFinished(self, result):
+        self.notifyStatus(result)
+        self.waitCursor(False)
+        print result
+
+    def pedata(self, hash):
+        if self.checkAPIKey():
+            cmd = VBAsyncCommand('pedata', self.APIKey, hash)
+            cmd.finishedProcessing.connect(self.pedataFinished)
+            self.waitCursor(True)
+            self.status('Loading pe information for binary %s...'%hash
+                , 'black')
+            cmd.start()   
+
+    def tabWidgetOtherChanged(self, index):
+        if index == 0:
+            self.avscans(self.openedFileHash)
+        if index == 1:
+            self.behaviors(self.openedFileHash)
+        if index == 2:
+            self.pedata(self.openedFileHash)
+
     def toolBoxCurrentChanged(self, index):        
         if index == 1:
             tabIndex = self.ui.tabWidgetVB.currentIndex()
-            self.tabWidgetVBChanged(tabIndex)
+            self.tabWidgetVBChanged(tabIndex)        
         else: 
             self.abortSearchingProcedures()
+            if index == 2:
+                tabIndex = self.ui.tabWidgetOther.currentIndex()
+                self.tabWidgetOtherChanged(tabIndex)
 
     def listBinsItemChanged(self, item):
         if item is not None:

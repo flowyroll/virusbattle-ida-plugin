@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'VBUI.ui'
 #
-# Created: Mon May 25 15:04:08 2015
+# Created: Mon May 25 15:28:09 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -586,27 +586,27 @@ class Ui_frmVirusBattle(object):
         self.page_2 = QtGui.QWidget()
         self.page_2.setGeometry(QtCore.QRect(0, 0, 731, 310))
         self.page_2.setObjectName("page_2")
-        self.tabWidget = QtGui.QTabWidget(self.page_2)
-        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 731, 301))
-        self.tabWidget.setObjectName("tabWidget")
+        self.tabWidgetOther = QtGui.QTabWidget(self.page_2)
+        self.tabWidgetOther.setGeometry(QtCore.QRect(0, 0, 731, 301))
+        self.tabWidgetOther.setObjectName("tabWidgetOther")
         self.tab_3 = QtGui.QWidget()
         self.tab_3.setObjectName("tab_3")
         self.textBrowserAVScan = QtGui.QTextBrowser(self.tab_3)
         self.textBrowserAVScan.setGeometry(QtCore.QRect(6, 10, 711, 261))
         self.textBrowserAVScan.setObjectName("textBrowserAVScan")
-        self.tabWidget.addTab(self.tab_3, "")
+        self.tabWidgetOther.addTab(self.tab_3, "")
         self.tab_4 = QtGui.QWidget()
         self.tab_4.setObjectName("tab_4")
         self.textBrowserBehavior = QtGui.QTextBrowser(self.tab_4)
         self.textBrowserBehavior.setGeometry(QtCore.QRect(7, 10, 711, 261))
         self.textBrowserBehavior.setObjectName("textBrowserBehavior")
-        self.tabWidget.addTab(self.tab_4, "")
+        self.tabWidgetOther.addTab(self.tab_4, "")
         self.tab_5 = QtGui.QWidget()
         self.tab_5.setObjectName("tab_5")
         self.textBrowserPEInfo = QtGui.QTextBrowser(self.tab_5)
         self.textBrowserPEInfo.setGeometry(QtCore.QRect(7, 10, 711, 261))
         self.textBrowserPEInfo.setObjectName("textBrowserPEInfo")
-        self.tabWidget.addTab(self.tab_5, "")
+        self.tabWidgetOther.addTab(self.tab_5, "")
         self.toolBox.addItem(self.page_2, "")
         self.line = QtGui.QFrame(frmVirusBattle)
         self.line.setGeometry(QtCore.QRect(10, 400, 731, 20))
@@ -623,7 +623,7 @@ class Ui_frmVirusBattle(object):
         self.toolBox.setCurrentIndex(0)
         self.toolBox.layout().setSpacing(6)
         self.tabWidgetVB.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidgetOther.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(frmVirusBattle)
 
     def retranslateUi(self, frmVirusBattle):
@@ -739,7 +739,7 @@ class Ui_frmVirusBattle(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QtGui.QApplication.translate("frmVirusBattle", "AVScan", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_3), QtGui.QApplication.translate("frmVirusBattle", "AVScan", None, QtGui.QApplication.UnicodeUTF8))
         self.textBrowserBehavior.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -747,7 +747,7 @@ class Ui_frmVirusBattle(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QtGui.QApplication.translate("frmVirusBattle", "Behavior", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_4), QtGui.QApplication.translate("frmVirusBattle", "Behavior", None, QtGui.QApplication.UnicodeUTF8))
         self.textBrowserPEInfo.setHtml(QtGui.QApplication.translate("frmVirusBattle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -755,7 +755,7 @@ class Ui_frmVirusBattle(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">No data available for this binary.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QtGui.QApplication.translate("frmVirusBattle", "PE Info", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidgetOther.setTabText(self.tabWidgetOther.indexOf(self.tab_5), QtGui.QApplication.translate("frmVirusBattle", "PE Info", None, QtGui.QApplication.UnicodeUTF8))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QtGui.QApplication.translate("frmVirusBattle", "Other", None, QtGui.QApplication.UnicodeUTF8))
         self.lblStatus.setText(QtGui.QApplication.translate("frmVirusBattle", "idle", None, QtGui.QApplication.UnicodeUTF8))
 

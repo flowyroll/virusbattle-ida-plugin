@@ -244,7 +244,7 @@ class VBAPI(object):
             {}
         )
 
-     @staticmethod
+    @staticmethod
     def behaviors(APIKey, fileHash):
         return VBAPI.get(
             ['other/behaviors', APIKey, fileHash],
