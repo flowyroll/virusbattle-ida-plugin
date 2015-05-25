@@ -9,4 +9,5 @@ VERSION 0.2
 - `other` section for avscan, behavior, peinfo services added
 - Hidden API Key
 - Server Port Configuration added
+- LCD for matched binaries count added
 - Bug fix: Environment variable for user profile on linux
