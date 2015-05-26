@@ -71,7 +71,7 @@ class VBFunctionChooser(Choose2):
                     )
                 c.Show()                                
             elif cmd == self.cmdDissInfo:
-                print "Diass @", n
+                print "This feature will be added on the next release."
             else:
                 print "Unknown command:", cmd_id, "@", n
         return 1

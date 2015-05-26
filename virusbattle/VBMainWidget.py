@@ -331,19 +331,20 @@ class VBMainWidget(QtGui.QWidget):
                     'message': 'No procedure has been selected'
                 })
         elif btnName == 'MatchedLeftProcMoreInfo':
-            if self.ui.listProcsWithSim.currentItem() is not None:
-                rva = self.ui.listProcsWithSim.currentItem().text()
-                hash = self.openedFileHash
-                dissViewer = VBDisassemblyViewer(self.juiciesCache.read(hash)[rva])
-                print dissViewer.Show()
-            else:
-                self.notifyStatus({
-                    'statuscode': 1,
-                    'message': 'No procedure has been selected'
-                })                        
+            print "This feature will be added on the next release."
+            # if self.ui.listProcsWithSim.currentItem() is not None:
+            #     rva = self.ui.listProcsWithSim.currentItem().text()
+            #     hash = self.openedFileHash
+            #     # dissViewer = VBDisassemblyViewer(self.juiciesCache.read(hash)[rva])
+            #     # print dissViewer.Show()
+            # else:
+            #     self.notifyStatus({
+            #         'statuscode': 1,
+            #         'message': 'No procedure has been selected'
+            #     })                        
             # disassemblyInfo = self.juiciesCache.read(self.openedFileHash)[rva]
         elif btnName == 'MatchedRightProcMoreInfo':
-            pass
+            print "This feature will be added on the next release."
         elif btnName == 'ShowChild':
             childHash = self.ui.editChildHash.text()
             childSName = self.ui.editChildServiceName.text()
@@ -911,8 +912,8 @@ class VBMainWidget(QtGui.QWidget):
         self.waitCursor(False)
         template = None
         if result['statuscode'] == 0:         
-            # template = VBTemplateHelper.buildAVScansPage(result['answer'])               
-            print result
+            template = VBTemplateHelper.loadTemplate('underconstruct')
+            # Should be implemented on next version to show actual data
         else:
             template = VBTemplateHelper.loadTemplate('nodata')
         
