@@ -109,6 +109,14 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.tabWidgetOther.currentChanged.connect(self.tabWidgetOtherChanged)
         
         self.ui.editAPIKey.textChanged.connect(self.editAPIKeyTextChanged)
+        self.ui.editOtherSHA.textChanged.connect(self.editOtherSHATextChanged)
+
+    def editOtherSHATextChanged(self):
+        self.otherInfosAvailability = {
+            'avscans': False,
+            'behaviors': False,
+            'pedata': False
+        }        
 
     def showAPIKey(self):
         self.ui.editAPIKey.setEchoMode(QtGui.QLineEdit.Normal)
