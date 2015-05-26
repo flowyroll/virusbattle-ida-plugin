@@ -49,6 +49,11 @@ class VBMainWidget(QtGui.QWidget):
             self.ui.lblOpenFileHash.setText('Current file could be not found.')
 
         self.loadListProfiles()
+        self.otherInfosAvailability = {
+            'avscans': False,
+            'behaviors': False,
+            'pedata': False
+        }
    
     def initCaches(self):
         self.binaryListCache = VBCache()
@@ -86,6 +91,7 @@ class VBMainWidget(QtGui.QWidget):
         self.ui.btnMatchedRightProcMoreInfo.clicked.connect(self.buttonClicked)
         self.ui.btnShowChild.clicked.connect(self.buttonClicked)
         self.ui.btnShowBinOther.clicked.connect(self.buttonClicked)
+        self.ui.btnReloadOther.clicked.connect(self.buttonClicked)
 
         self.ui.btnShowAPIKey.pressed.connect(self.showAPIKey)
         self.ui.btnShowAPIKey.released.connect(self.hideAPIKey)
@@ -339,6 +345,15 @@ class VBMainWidget(QtGui.QWidget):
                 hash = self.ui.listBins.currentItem().text()
                 self.ui.editOtherSHA.setText(hash)
                 self.ui.toolBox.setCurrentIndex(2)
+        elif btnName == 'ReloadOther':
+            tabIndex = self.ui.tabWidgetOther.currentIndex()
+            if tabIndex == 0:
+                self.otherInfosAvailability['avscans'] = False
+            elif tabIndex == 1:
+                self.otherInfosAvailability['behaviors'] = False
+            elif tabIndex == 2:
+                self.otherInfosAvailability['pedata'] = False
+            self.tabWidgetOtherChanged(tabIndex)
         else:
             self.status('idle', 'black')
 
@@ -866,11 +881,13 @@ class VBMainWidget(QtGui.QWidget):
         
         if template is not None:
             self.ui.textBrowserAVScan.setHtml(template)
+            self.otherInfosAvailability['avscans'] = True
         else:
             self.notifyStatus({
                 'statuscode': 1,
                 'message': 'Template could not be loaded'
             })
+            self.otherInfosAvailability['avscans'] = False
 
     def avscans(self, hash):
         if self.checkAPIKey():
@@ -881,8 +898,7 @@ class VBMainWidget(QtGui.QWidget):
                 , 'black')
             cmd.start()        
 
-    def behaviorsFinished(self, result):
-        print result
+    def behaviorsFinished(self, result):        
         self.notifyStatus(result)
         self.waitCursor(False)
         template = None
@@ -894,11 +910,13 @@ class VBMainWidget(QtGui.QWidget):
         
         if template is not None:
             self.ui.textBrowserBehavior.setHtml(template)
+            self.otherInfosAvailability['behaviors'] = True
         else:
             self.notifyStatus({
                 'statuscode': 1,
                 'message': 'Template could not be loaded'
             })
+            self.otherInfosAvailability['behaviors'] = False
 
     def behaviors(self, hash):
         if self.checkAPIKey():
@@ -910,23 +928,23 @@ class VBMainWidget(QtGui.QWidget):
             cmd.start()           
 
     def pedataFinished(self, result):
-        print result
         self.notifyStatus(result)
         self.waitCursor(False)
         template = None
         if result['statuscode'] == 0:         
-            # print result
             template = VBTemplateHelper.buildPEDataPage(result['answer'])               
         else:
             template = VBTemplateHelper.loadTemplate('nodata')
         
         if template is not None:
             self.ui.textBrowserPEInfo.setHtml(template)
+            self.otherInfosAvailability['pedata'] = True
         else:
             self.notifyStatus({
                 'statuscode': 1,
                 'message': 'Template could not be loaded'
             })
+            self.otherInfosAvailability['pedata'] = False
 
     def pedata(self, hash):
         if self.checkAPIKey():
@@ -939,11 +957,11 @@ class VBMainWidget(QtGui.QWidget):
 
     def tabWidgetOtherChanged(self, index):
         hash = self.ui.editOtherSHA.text().strip()
-        if index == 0:
+        if index == 0 and not self.otherInfosAvailability['avscans']:
             self.avscans(hash)
-        if index == 1:
+        if index == 1 and not self.otherInfosAvailability['behaviors']:
             self.behaviors(hash)
-        if index == 2:
+        if index == 2 and not self.otherInfosAvailability['pedata']:
             self.pedata(hash)
 
     def toolBoxCurrentChanged(self, index):        
