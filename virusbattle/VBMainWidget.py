@@ -915,8 +915,8 @@ class VBMainWidget(QtGui.QWidget):
         self.waitCursor(False)
         template = None
         if result['statuscode'] == 0:         
-            print result
-            # template = VBTemplateHelper.buildAVScansPage(result['answer'])               
+            # print result
+            template = VBTemplateHelper.buildPEDataPage(result['answer'])               
         else:
             template = VBTemplateHelper.loadTemplate('nodata')
         
